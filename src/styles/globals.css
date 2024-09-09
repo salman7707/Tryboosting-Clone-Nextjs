@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  color: #212529;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: var(--ff-ns-r);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Adjust distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-moveup{
+   animation: move-up 5s ease infinite;
+}
+
+@keyframes move-toUp {
+  0% {
+     transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-100px);
+  }
+ }
+
+.animate-toUp{
+  animation: move-toUp 2s ease infinite ;
+}
+
+
+@font-face {
+  font-family: my-custom;
+  src: url(../../public/font/Neusharp-Bold.woff2);
+}
+@font-face {
+  font-family: my-custom2;
+  src: url(../../public/font/Roboto-Regular.woff2);
+}
+
+.custom-bg {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.relative-h {
+  position: relative;
+}
+
+.hover-c {
+  transition: opacity 0.3s ease;
+}
+
+.relative-h:hover .hover-c {
+  opacity: 0.94;
+}
+
